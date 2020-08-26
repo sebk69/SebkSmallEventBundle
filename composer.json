@@ -1,0 +1,15 @@
+{
+  "name": "Sebk/SmallEventsBundle",
+  "description": "Share events accross different symfony applications",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0-only",
+  "authors": [
+    {
+      "name": "Sebastien Kus",
+      "email": "seb@small-iceberg.dev"
+    }
+  ],
+  "require": {
+    "php-amqplib/php-amqplib": ">=2.9.0"
+  }
+}

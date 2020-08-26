@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    public: true
+  Sebk\SmallEventsBundle\Events\MessageBroker:
+    autowire: false
+    arguments: ["%sebk_small_events%"]
+  sebk_small_events_message_broker:
+    alias: Sebk\SmallEventsBundle\Events\MessageBroker
+  Sebk\SmallEventsBundle\Command\TestCommand:
+    arguments:
+      - "@sebk_small_events_message_broker"
+    tags: [console.command]
