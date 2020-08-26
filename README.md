@@ -1,2 +1,2 @@
 # SebkSmallEventBundle
-Share events acccross different symfony applications
+Share events accross different symfony applications
