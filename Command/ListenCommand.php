@@ -4,15 +4,16 @@
 namespace Sebk\SmallEventsBundle\Command;
 
 
-use Sebk\SmallEventsBundle\Events\MessageBroker;
+use App\Event\TestEvent;
+use Sebk\SmallEventsBundle\Dispatcher\MessageBroker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class TestCommand extends Command
+class ListenCommand extends Command
 {
+    protected static $defaultName = "sebk:small-events:listen";
     protected $messageBroker;
-    protected static $defaultName = "sebk:small-events:test";
 
     public function __construct(MessageBroker $messageBroker)
     {
@@ -23,8 +24,6 @@ class TestCommand extends Command
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->messageBroker->createQueues();
-
-        return 0;
+        $this->messageBroker->listen();
     }
 }

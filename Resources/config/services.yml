@@ -1,12 +1,15 @@
 services:
   _defaults:
     public: true
-  Sebk\SmallEventsBundle\Events\MessageBroker:
-    autowire: false
+    autowire: true
+  Sebk\SmallEventsBundle\Dispatcher\MessageBroker:
     arguments: ["%sebk_small_events%"]
   sebk_small_events_message_broker:
-    alias: Sebk\SmallEventsBundle\Events\MessageBroker
-  Sebk\SmallEventsBundle\Command\TestCommand:
-    arguments:
-      - "@sebk_small_events_message_broker"
-    tags: [console.command]
+    alias: Sebk\SmallEventsBundle\Dispatcher\MessageBroker
+  Sebk\SmallEventsBundle\Dispatcher\SmallDispatcher:
+    autowire: true
+  Sebk\SmallEventsBundle\Command\:
+    resource: '../../Command/'
+    tags: ['console.command']
+  Symfony\Component\EventDispatcher\EventDispatcher:
+    alias: 'event_dispatcher'
