@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * This file is a part of SebkSmallEventsBundle
+ * Copyright 2020 - Sébastien Kus
+ * Under GNU GPL V3 licence
+ */
 
 namespace Sebk\SmallEventsBundle\DependencyInjection;
 
@@ -14,6 +18,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
+     * Read configuration
      * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder|void
      */
     public function getConfigTreeBuilder()
