@@ -1,5 +1,5 @@
 {
-  "name": "Sebk/SmallEventsBundle",
+  "name": "sebk/small-events-bundle",
   "description": "Share events accross different symfony applications",
   "minimum-stability": "stable",
   "license": "GPL-3.0-only",
